@@ -22,17 +22,17 @@ public class GameRepository {
         return magics;
     }
 
-    // Methods to load magical items from JSON
+    // Methods to load magical items from JSON, copy chatGPT
     public void loadMagics(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("magics.json").getFile());
+        File file = new File(classLoader.getResource(jsonFilePath).getFile());
         magics = objectMapper.readValue(file, new TypeReference<List<Magic>>() {});
     }
 
     // Methods to load items from JSON
     public void loadAllResource() throws IOException {
-        loadMagics("../resource/magics.json");
+        loadMagics("magics.json");
     }
 
     public static void main(String[] args) throws IOException {
