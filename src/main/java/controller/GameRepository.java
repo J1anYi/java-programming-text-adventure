@@ -32,13 +32,18 @@ public class GameRepository {
 
     // Methods to load items from JSON
     public void loadAllResource() throws IOException {
+        System.out.println("Loading all resources...");
         loadMagics("magics.json");
+        System.out.println("Magics loaded!");
+        displayMagics();
+
+        System.out.println("All resources loaded!");
     }
 
-    public static void main(String[] args) throws IOException {
-        GameRepository gameRepository = new GameRepository();
-        gameRepository.loadAllResource();
-
-        System.out.println(gameRepository.getMagics());
+    public void displayMagics() {
+        System.out.println("Magics:");
+        for (Magic magic : magics) {
+            System.out.println(magic);
+        }
     }
 }
