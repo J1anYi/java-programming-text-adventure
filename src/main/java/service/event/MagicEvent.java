@@ -9,7 +9,7 @@ import model.character.Protagonist;
  * - target: Character
  * - magic: Magic
  */
-public class MagicEvent {
+public class MagicEvent extends Event{
     private Character caster;
     private Character target;
     private Magic magic;
@@ -20,6 +20,7 @@ public class MagicEvent {
         this.magic = magic;
     }
 
+    @Override
     public void trigger() {
         System.out.println("Magic event executed");
 
@@ -46,13 +47,13 @@ public class MagicEvent {
         }
 
         // check if protagonist has enough magic power
-        if (protagonist.getMagic().getCost() < this.magic.getCost()) {
+        if (protagonist.getMana() < this.magic.getCost()) {
             System.out.println("Not enough magic power");
             return;
         }
 
         // cast magic
-        protagonist.getMagic().setCost(protagonist.getMagic().getCost() - this.magic.getCost());
+        protagonist.setMana(protagonist.getMana() - this.magic.getCost());
         target.setHealth(target.getHealth() - this.magic.getValue());
         System.out.println("Magic casted");
     }
