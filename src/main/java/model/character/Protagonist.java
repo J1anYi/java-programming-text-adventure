@@ -1,12 +1,15 @@
 package model.character;
 
 import model.Magic;
+import model.goods.Armor;
 import model.goods.Goods;
+import model.goods.Weapon;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
- * - magic: Magic
+ * - mana: Intteger
  * - money: Integer
  * - skills: List<Magic>
  * - possessions: List<Goods:
@@ -14,28 +17,29 @@ import java.util.Arrays;
  */
 public class Protagonist extends Character{
 
-    private Magic magic;
+    private int mana;
     private int money;
-    private Magic[] skills;
-    private Goods[] possessions;
+    private List<Magic> skills;
+    private List<Goods> possessions;
     private int experienceValue;
 
     public Protagonist() {}
 
-    public Protagonist(Magic magic, int money, Magic[] skills, Goods[] possessions, int experienceValue) {
-        this.magic = magic;
+    public Protagonist(int health, Weapon weapon, Armor armor, String description, int mana, int money, List<Magic> skills, List<Goods> possessions, int experienceValue) {
+        super(health, weapon, armor, description);
+        this.mana = mana;
         this.money = money;
         this.skills = skills;
         this.possessions = possessions;
         this.experienceValue = experienceValue;
     }
 
-    public Magic getMagic() {
-        return magic;
+    public int getMana() {
+        return mana;
     }
 
-    public void setMagic(Magic magic) {
-        this.magic = magic;
+    public void setMana(int mana) {
+        this.mana = mana;
     }
 
     public int getMoney() {
@@ -46,19 +50,19 @@ public class Protagonist extends Character{
         this.money = money;
     }
 
-    public Magic[] getSkills() {
+    public List<Magic> getSkills() {
         return skills;
     }
 
-    public void setSkills(Magic[] skills) {
+    public void setSkills(List<Magic> skills) {
         this.skills = skills;
     }
 
-    public Goods[] getPossessions() {
+    public List<Goods> getPossessions() {
         return possessions;
     }
 
-    public void setPossessions(Goods[] possessions) {
+    public void setPossessions(List<Goods> possessions) {
         this.possessions = possessions;
     }
 
@@ -72,13 +76,12 @@ public class Protagonist extends Character{
 
     @Override
     public String toString() {
-        String result = super.toString() + "Protagonist{" +
-                "magic=" + magic +
+        return "Protagonist{" +
+                "mana=" + mana +
                 ", money=" + money +
-                ", skills=" + Arrays.toString(skills) +
-                ", possessions=" + Arrays.toString(possessions) +
+                ", skills=" + skills +
+                ", possessions=" + possessions +
                 ", experienceValue=" + experienceValue +
                 '}';
-        return result;
     }
 }
