@@ -13,6 +13,9 @@ public class Scene {
     private List<Scene> nextScenes;
     private List<Character> characters;
 
+    public Scene() {
+    }
+
     public Scene act() {
         System.out.println("Please choice the event number you want to do: ");
         System.out.println("1. Go to the next scene");
@@ -123,5 +126,14 @@ public class Scene {
 
     public void setCharacters(List<Character> characters) {
         this.characters = characters;
+    }
+
+    @Override
+    public String toString() {
+        return "Scene{" +
+                "description='" + description + '\'' +
+                ", nextScenes=" + nextScenes +
+                ", characters=" + characters +
+                '}';
     }
 }

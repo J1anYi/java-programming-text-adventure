@@ -1,5 +1,5 @@
-{
-  "Elven Forest": {
+[
+  {
     "description": "Elven Forest",
     "nextScenes": [
       {
@@ -12,9 +12,9 @@
         "description": "Dark Woods"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Mystic River": {
+  {
     "description": "Mystic River",
     "nextScenes": [
       {
@@ -24,9 +24,9 @@
         "description": "Witch's Swamp"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Desert of Doom": {
+  {
     "description": "Desert of Doom",
     "nextScenes": [
       {
@@ -36,9 +36,9 @@
         "description": "Goblin Outpost"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Goblin Outpost": {
+  {
     "description": "Goblin Outpost",
     "nextScenes": [
       {
@@ -48,9 +48,9 @@
         "description": "Dark Lord's Castle"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Dragon's Lair": {
+  {
     "description": "Dragon's Lair",
     "nextScenes": [
       {
@@ -60,9 +60,9 @@
         "description": "Cursed Ruins"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Dark Woods": {
+  {
     "description": "Dark Woods",
     "nextScenes": [
       {
@@ -72,9 +72,9 @@
         "description": "Warlock Keep"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Witch's Swamp": {
+  {
     "description": "Witch's Swamp",
     "nextScenes": [
       {
@@ -84,9 +84,9 @@
         "description": "Mystic River"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Cursed Ruins": {
+  {
     "description": "Cursed Ruins",
     "nextScenes": [
       {
@@ -96,9 +96,9 @@
         "description": "Dragon's Lair"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Demon's Gate": {
+  {
     "description": "Demon's Gate",
     "nextScenes": [
       {
@@ -108,9 +108,9 @@
         "description": "Dark Lord's Castle"
       }
     ],
-    "monsters": []
+    "characters": []
   },
-  "Dark Lord's Castle": {
+  {
     "description": "Dark Lord's Castle",
     "nextScenes": [
       {
@@ -126,6 +126,6 @@
         "description": "Goblin Outpost"
       }
     ],
-    "monsters": []
+    "characters": []
   }
-}
+]

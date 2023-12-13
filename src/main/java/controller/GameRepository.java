@@ -12,6 +12,8 @@ import model.character.Monster;
 import model.goods.Armor;
 import model.goods.Goods;
 import model.goods.Weapon;
+import service.scene.Scene;
+import service.scene.TownScene;
 
 public class GameRepository {
 
@@ -22,6 +24,8 @@ public class GameRepository {
     private List<Armor> armors;
     private List<Weapon> weapons;
     private List<Monster> monsters;
+    private List<Scene> scenes;
+    private List<TownScene> townScenes;
 
     private GameRepository() {
         // Initialize lists
@@ -54,6 +58,19 @@ public class GameRepository {
         loadMonsters("monsters.json");
         System.out.println("Monsters loaded!");
         displayMonsters();
+
+        // load scenes
+        loadScenes("scenes.json");
+        System.out.println("Scenes loaded!");
+
+        loadTownScenes("town_scenes.json");
+        System.out.println("TownScenes loaded!");
+
+        // connect scenes after loading
+        connectScenes();
+        // display scenes will cause stack overflow
+//        displayScenes();
+//        displayTownScenes();
 
         System.out.println("All resources loaded!");
     }
@@ -151,6 +168,70 @@ public class GameRepository {
         monster.setDropItems(dropItems);
     }
 
+    private void loadScenes(String jsonFilePath) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        scenes = objectMapper.readValue(file, new TypeReference<List<Scene>>() {});
+    }
+
+    private void loadTownScenes(String jsonFilePath) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        townScenes = objectMapper.readValue(file, new TypeReference<List<TownScene>>() {});
+    }
+
+    private void connectScenes() {
+        // connect scenes
+        for (Scene scene : scenes) {
+            List<Scene> removeScenes = new ArrayList<>();
+            List<Scene> addScenes = new ArrayList<>();
+            for (Scene nextScene : scene.getNextScenes()) {
+                for (Scene scene1 : scenes) {
+                    if (scene1.getDescription().contains(nextScene.getDescription())) {
+                        removeScenes.add(nextScene);
+                        addScenes.add(scene1);
+                        break;
+                    }
+                 }
+                for (TownScene townScene : townScenes) {
+                    if (townScene.getDescription().contains(nextScene.getDescription())) {
+                        removeScenes.add(nextScene);
+                        addScenes.add(townScene);
+                        break;
+                    }
+                }
+            }
+            scene.getNextScenes().removeAll(removeScenes);
+            scene.getNextScenes().addAll(addScenes);
+        }
+
+        // connect town scenes
+        for (TownScene townScene : townScenes) {
+            List<Scene> removeScenes = new ArrayList<>();
+            List<Scene> addScenes = new ArrayList<>();
+            for (Scene nextScene : townScene.getNextScenes()) {
+                for (Scene scene1 : scenes) {
+                    if (scene1.getDescription().contains(nextScene.getDescription())) {
+                        removeScenes.add(nextScene);
+                        addScenes.add(scene1);
+                        break;
+                    }
+                }
+                for (TownScene townScene1 : townScenes) {
+                    if (townScene1.getDescription().contains(nextScene.getDescription())) {
+                        removeScenes.add(nextScene);
+                        addScenes.add(townScene1);
+                        break;
+                    }
+                }
+            }
+            townScene.getNextScenes().removeAll(removeScenes);
+            townScene.getNextScenes().addAll(addScenes);
+        }
+    }
+
     public void displayMagics() {
         System.out.println("Magics:");
         for (Magic magic : magics) {
@@ -183,6 +264,20 @@ public class GameRepository {
         System.out.println("Monsters:");
         for (Monster monster : monsters) {
             System.out.println(monster);
+        }
+    }
+
+    public void displayScenes() {
+        System.out.println("Scenes:");
+        for (Scene scene : scenes) {
+            System.out.println(scene);
+        }
+    }
+
+    public void displayTownScenes() {
+        System.out.println("TownScenes:");
+        for (TownScene townScene : townScenes) {
+            System.out.println(townScene);
         }
     }
 

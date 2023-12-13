@@ -1,5 +1,5 @@
-{
-  "Newbie Village": {
+[
+  {
     "description": "Newbie Village",
     "nextScenes": [
       {
@@ -9,11 +9,11 @@
         "description": "Dwarven Mountains"
       }
     ],
-    "monsters": [],
+    "characters": [],
     "taskboard": [],
     "marketplace": []
   },
-  "Dwarven Mountains": {
+  {
     "description": "Dwarven Mountains",
     "nextScenes": [
       {
@@ -26,11 +26,11 @@
         "description": "Dragon's Lair"
       }
     ],
-    "monsters": [],
+    "characters": [],
     "taskboard": [],
     "marketplace": []
   },
-  "Warlock Keep": {
+  {
     "description": "Warlock Keep",
     "nextScenes": [
       {
@@ -40,8 +40,8 @@
         "description": "Dark Woods"
       }
     ],
-    "monsters": [],
+    "characters": [],
     "taskboard": [],
     "marketplace": []
   }
-}
+]
