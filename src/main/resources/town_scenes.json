@@ -1,0 +1,47 @@
+{
+  "Newbie Village": {
+    "description": "Newbie Village",
+    "nextScenes": [
+      {
+        "description": "Elven Forest"
+      },
+      {
+        "description": "Dwarven Mountains"
+      }
+    ],
+    "monsters": [],
+    "taskboard": [],
+    "marketplace": []
+  },
+  "Dwarven Mountains": {
+    "description": "Dwarven Mountains",
+    "nextScenes": [
+      {
+        "description": "Desert of Doom"
+      },
+      {
+        "description": "Newbie Village"
+      },
+      {
+        "description": "Dragon's Lair"
+      }
+    ],
+    "monsters": [],
+    "taskboard": [],
+    "marketplace": []
+  },
+  "Warlock Keep": {
+    "description": "Warlock Keep",
+    "nextScenes": [
+      {
+        "description": "Dark Lord's Castle"
+      },
+      {
+        "description": "Dark Woods"
+      }
+    ],
+    "monsters": [],
+    "taskboard": [],
+    "marketplace": []
+  }
+}
