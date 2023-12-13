@@ -1,0 +1,441 @@
+[
+  {
+    "health": 79,
+    "weapon": {
+      "description": "Rohan's Rider Sword"
+    },
+    "armor": {
+      "description": "Nazgul Cloak"
+    },
+    "description": "Uruk Soldier",
+    "gold": 40,
+    "exp": 28,
+    "dropItems": [
+      {
+        "description": "Elf Stone"
+      },
+      {
+        "description": "Wizard's Staff"
+      },
+      {
+        "description": "Dwarven Plate Armor"
+      },
+      {
+        "description": "Elven Cloak"
+      }
+    ]
+  },
+  {
+    "health": 66,
+    "weapon": {
+      "description": "Hobbit's Sling"
+    },
+    "armor": {
+      "description": "Nazgul Cloak"
+    },
+    "description": "Haradrim Raider",
+    "gold": 30,
+    "exp": 46,
+    "dropItems": [
+      {
+        "description": "Rohan's Medallion"
+      },
+      {
+        "description": "Nazgul's Sword"
+      },
+      {
+        "description": "Elven Chainmail"
+      },
+      {
+        "description": "Scroll of Ancient Lore"
+      }
+    ]
+  },
+  {
+    "health": 61,
+    "weapon": {
+      "description": "Dwarven Battle Axe"
+    },
+    "armor": {
+      "description": "Dwarven Plate Armor"
+    },
+    "description": "Uruk Soldier",
+    "gold": 32,
+    "exp": 48,
+    "dropItems": [
+      {
+        "description": "Ranger's Bow"
+      },
+      {
+        "description": "Wizard's Staff"
+      },
+      {
+        "description": "Wizard's Robes"
+      },
+      {
+        "description": "Mithril Vest"
+      }
+    ]
+  },
+  {
+    "health": 62,
+    "weapon": {
+      "description": "Nazgul's Sword"
+    },
+    "armor": {
+      "description": "Orcish Leather Armor"
+    },
+    "description": "Orc Grunt",
+    "gold": 37,
+    "exp": 22,
+    "dropItems": [
+      {
+        "description": "Sword of the King"
+      },
+      {
+        "description": "Gondorian Sword"
+      },
+      {
+        "description": "Nazgul Cloak"
+      },
+      {
+        "description": "Lembas Bread"
+      }
+    ]
+  },
+  {
+    "health": 78,
+    "weapon": {
+      "description": "Hobbit's Sling"
+    },
+    "armor": {
+      "description": "Dwarven Plate Armor"
+    },
+    "description": "Uruk Soldier",
+    "gold": 22,
+    "exp": 45,
+    "dropItems": [
+      {
+        "description": "Rohan's Medallion"
+      },
+      {
+        "description": "Gondorian Sword"
+      },
+      {
+        "description": "Nazgul Cloak"
+      },
+      {
+        "description": "Elven Cloak"
+      }
+    ]
+  },
+  {
+    "health": 79,
+    "weapon": {
+      "description": "Nazgul's Sword"
+    },
+    "armor": {
+      "description": "Ent Bark Armor"
+    },
+    "description": "Orc Grunt",
+    "gold": 40,
+    "exp": 34,
+    "dropItems": [
+      {
+        "description": "Hobbit's Pipe"
+      },
+      {
+        "description": "Orcish Scimitar"
+      },
+      {
+        "description": "Wizard's Robes"
+      },
+      {
+        "description": "Lembas Bread"
+      }
+    ]
+  },
+  {
+    "health": 52,
+    "weapon": {
+      "description": "Ent's Branch"
+    },
+    "armor": {
+      "description": "Hobbit's Cloak"
+    },
+    "description": "Easterling Infantry",
+    "gold": 17,
+    "exp": 43,
+    "dropItems": [
+      {
+        "description": "Ent's Draught"
+      },
+      {
+        "description": "Dwarven Battle Axe"
+      },
+      {
+        "description": "Rohan's Rider Armor"
+      },
+      {
+        "description": "Ranger's Bow"
+      }
+    ]
+  },
+  {
+    "health": 57,
+    "weapon": {
+      "description": "Dwarven Battle Axe"
+    },
+    "armor": {
+      "description": "Orcish Leather Armor"
+    },
+    "description": "Uruk Soldier",
+    "gold": 13,
+    "exp": 20,
+    "dropItems": [
+      {
+        "description": "Palantir"
+      },
+      {
+        "description": "Hobbit's Sling"
+      },
+      {
+        "description": "Rohan's Rider Armor"
+      },
+      {
+        "description": "Ent's Draught"
+      }
+    ]
+  },
+  {
+    "health": 83,
+    "weapon": {
+      "description": "Ent's Branch"
+    },
+    "armor": {
+      "description": "Balrog Hide"
+    },
+    "description": "Haradrim Raider",
+    "gold": 14,
+    "exp": 25,
+    "dropItems": [
+      {
+        "description": "Hobbit's Pipe"
+      },
+      {
+        "description": "Hobbit's Sling"
+      },
+      {
+        "description": "Hobbit's Cloak"
+      },
+      {
+        "description": "Ent's Draught"
+      }
+    ]
+  },
+  {
+    "health": 61,
+    "weapon": {
+      "description": "Wizard's Staff"
+    },
+    "armor": {
+      "description": "Uruk-Hai Breastplate"
+    },
+    "description": "Goblin Scout",
+    "gold": 41,
+    "exp": 43,
+    "dropItems": [
+      {
+        "description": "Sword of the King"
+      },
+      {
+        "description": "Wizard's Staff"
+      },
+      {
+        "description": "Elven Chainmail"
+      },
+      {
+        "description": "Scroll of Ancient Lore"
+      }
+    ]
+  },
+  {
+    "health": 191,
+    "weapon": {
+      "description": "Orcish Scimitar"
+    },
+    "armor": {
+      "description": "Uruk-Hai Breastplate"
+    },
+    "description": "Angmar Warlord",
+    "gold": 72,
+    "exp": 162,
+    "dropItems": [
+      {
+        "description": "Elf Stone"
+      },
+      {
+        "description": "Rohan's Rider Sword"
+      },
+      {
+        "description": "Balrog Hide"
+      },
+      {
+        "description": "Palantir"
+      }
+    ]
+  },
+  {
+    "health": 224,
+    "weapon": {
+      "description": "Uruk-Hai Sword"
+    },
+    "armor": {
+      "description": "Ent Bark Armor"
+    },
+    "description": "Uruk-Hai Elite",
+    "gold": 53,
+    "exp": 108,
+    "dropItems": [
+      {
+        "description": "Scroll of Ancient Lore"
+      },
+      {
+        "description": "Ent's Branch"
+      },
+      {
+        "description": "Orcish Leather Armor"
+      }
+    ]
+  },
+  {
+    "health": 155,
+    "weapon": {
+      "description": "Uruk-Hai Sword"
+    },
+    "armor": {
+      "description": "Ent Bark Armor"
+    },
+    "description": "Angmar Warlord",
+    "gold": 82,
+    "exp": 160,
+    "dropItems": [
+      {
+        "description": "Hobbit's Pipe"
+      },
+      {
+        "description": "Uruk-Hai Sword"
+      },
+      {
+        "description": "Wizard's Robes"
+      },
+      {
+        "description": "Sword of the King"
+      }
+    ]
+  },
+  {
+    "health": 215,
+    "weapon": {
+      "description": "Wizard's Staff"
+    },
+    "armor": {
+      "description": "Nazgul Cloak"
+    },
+    "description": "Mordor Sorcerer",
+    "gold": 99,
+    "exp": 107,
+    "dropItems": [
+      {
+        "description": "Ent's Draught"
+      },
+      {
+        "description": "Elven Longbow"
+      },
+      {
+        "description": "Rohan's Rider Armor"
+      },
+      {
+        "description": "Sword of the King"
+      }
+    ]
+  },
+  {
+    "health": 165,
+    "weapon": {
+      "description": "Hobbit's Sling"
+    },
+    "armor": {
+      "description": "Orcish Leather Armor"
+    },
+    "description": "Angmar Warlord",
+    "gold": 67,
+    "exp": 185,
+    "dropItems": [
+      {
+        "description": "Lembas Bread"
+      },
+      {
+        "description": "Elven Longbow"
+      },
+      {
+        "description": "Wizard's Robes"
+      },
+      {
+        "description": "Rohan's Medallion"
+      }
+    ]
+  },
+  {
+    "health": 479,
+    "weapon": {
+      "description": "Wizard's Staff"
+    },
+    "armor": {
+      "description": "Dwarven Plate Armor"
+    },
+    "description": "Witch-King of Angmar",
+    "gold": 125,
+    "exp": 310,
+    "dropItems": [
+      {
+        "description": "Hobbit's Pipe"
+      },
+      {
+        "description": "Balrog's Whip"
+      },
+      {
+        "description": "Gondorian Knight Armor"
+      },
+      {
+        "description": "Scroll of Ancient Lore"
+      }
+    ]
+  },
+  {
+    "health": 339,
+    "weapon": {
+      "description": "Elven Longbow"
+    },
+    "armor": {
+      "description": "Balrog Hide"
+    },
+    "description": "Witch-King of Angmar",
+    "gold": 132,
+    "exp": 276,
+    "dropItems": [
+      {
+        "description": "Elf Stone"
+      },
+      {
+        "description": "Elven Longbow"
+      },
+      {
+        "description": "Uruk-Hai Breastplate"
+      },
+      {
+        "description": "Gondorian Horn"
+      }
+    ]
+  }
+]

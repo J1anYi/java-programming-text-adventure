@@ -8,13 +8,15 @@ import java.util.Scanner;
 
 public class Game {
 
-    GameRepository gameRepository;
+    // Singleton pattern
+    private static Game instance = null;
+    private GameRepository gameRepository;
     public static Scanner scanner = new Scanner(System.in);
     private Scene currentScene;
     private Protagonist currentProtagonist;
 
-    public Game() {
-        gameRepository = new GameRepository();
+    private Game() {
+        gameRepository = GameRepository.getInstance();
 
         start();
     }
@@ -47,13 +49,10 @@ public class Game {
             int action = scanner.nextInt();
             switch (action) {
                 case 1:
-                    System.out.println("Please write the scene number you want to go: ");
-                    int sceneNumber = scanner.nextInt();
-                    Scene nextScene = currentScene.act(sceneNumber);
+                    System.out.println("Walking around in this scene: ");
+                    Scene nextScene = currentScene.act();
                     if (nextScene != null) {
                         this.currentScene = nextScene;
-                    }else {
-                        System.out.println("Invalid scene number");
                     }
                     break;
                 case 2:
@@ -76,5 +75,29 @@ public class Game {
     public void exit() {
         System.out.println("----------------Game ended----------------");
         System.exit(0);
+    }
+
+    public Scene getCurrentScene() {
+        return currentScene;
+    }
+
+    public void setCurrentScene(Scene currentScene) {
+        this.currentScene = currentScene;
+    }
+
+    public Protagonist getCurrentProtagonist() {
+        return currentProtagonist;
+    }
+
+    public void setCurrentProtagonist(Protagonist currentProtagonist) {
+        this.currentProtagonist = currentProtagonist;
+    }
+
+    public static Game getInstance() {
+        if (instance == null) {
+            instance = new Game();
+        }
+
+        return instance;
     }
 }

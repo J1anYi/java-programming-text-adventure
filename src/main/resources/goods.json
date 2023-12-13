@@ -1,0 +1,62 @@
+[
+  {
+    "description": "Elven Cloak, woven with a spell of concealment, blending perfectly with natural surroundings",
+    "amount": 7
+  },
+  {
+    "description": "Palantir, a seeing-stone of old, capable of distant communication and vision",
+    "amount": 1
+  },
+  {
+    "description": "Ent's Draught, a mysterious liquid that grants strength and vitality",
+    "amount": 10
+  },
+  {
+    "description": "Ring of Power, a ring of great influence and danger, forged in the fires of Mount Doom",
+    "amount": 1
+  },
+  {
+    "description": "Lembas Bread, Elven waybread, one small bite can fill the stomach of a grown man",
+    "amount": 20
+  },
+  {
+    "description": "Phial of Galadriel, a small crystal phial containing the light of Earendil's star",
+    "amount": 3
+  },
+  {
+    "description": "Hobbit's Pipe, a finely crafted wooden pipe used by Hobbits of the Shire",
+    "amount": 5
+  },
+  {
+    "description": "Scroll of Ancient Lore, an old scroll containing forgotten knowledge and spells",
+    "amount": 2
+  },
+  {
+    "description": "Mithril Vest, a lightweight and incredibly strong armor, shimmering like silver",
+    "amount": 4
+  },
+  {
+    "description": "Gondorian Horn, a horn used for signaling in battles, carrying sound over long distances",
+    "amount": 6
+  },
+  {
+    "description": "Elf Stone, a gemstone with healing properties, once belonging to the Elves of Valinor",
+    "amount": 3
+  },
+  {
+    "description": "Dwarf Map, an ancient map showing hidden passages and secret doors, from the Dwarven realms",
+    "amount": 2
+  },
+  {
+    "description": "Ranger's Bow, a longbow used by the Rangers of the North, known for its accuracy",
+    "amount": 5
+  },
+  {
+    "description": "Sword of the King, a legendary sword, symbolizing the return of the true king",
+    "amount": 1
+  },
+  {
+    "description": "Rohan's Medallion, a token of honor given by the horse-lords of Rohan",
+    "amount": 8
+  }
+]

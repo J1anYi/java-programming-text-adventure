@@ -1,0 +1,131 @@
+[
+  {
+    "description": "Elven Forest",
+    "nextScenes": [
+      {
+        "description": "Mystic River"
+      },
+      {
+        "description": "Newbie Village"
+      },
+      {
+        "description": "Dark Woods"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Mystic River",
+    "nextScenes": [
+      {
+        "description": "Elven Forest"
+      },
+      {
+        "description": "Witch's Swamp"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Desert of Doom",
+    "nextScenes": [
+      {
+        "description": "Dwarven Mountains"
+      },
+      {
+        "description": "Goblin Outpost"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Goblin Outpost",
+    "nextScenes": [
+      {
+        "description": "Desert of Doom"
+      },
+      {
+        "description": "Dark Lord's Castle"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Dragon's Lair",
+    "nextScenes": [
+      {
+        "description": "Dwarven Mountains"
+      },
+      {
+        "description": "Cursed Ruins"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Dark Woods",
+    "nextScenes": [
+      {
+        "description": "Elven Forest"
+      },
+      {
+        "description": "Warlock Keep"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Witch's Swamp",
+    "nextScenes": [
+      {
+        "description": "Demon's Gate"
+      },
+      {
+        "description": "Mystic River"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Cursed Ruins",
+    "nextScenes": [
+      {
+        "description": "Dark Lord's Castle"
+      },
+      {
+        "description": "Dragon's Lair"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Demon's Gate",
+    "nextScenes": [
+      {
+        "description": "Witch's Swamp"
+      },
+      {
+        "description": "Dark Lord's Castle"
+      }
+    ],
+    "characters": []
+  },
+  {
+    "description": "Dark Lord's Castle",
+    "nextScenes": [
+      {
+        "description": "Demon's Gate"
+      },
+      {
+        "description": "Cursed Ruins"
+      },
+      {
+        "description": "Warlock Keep"
+      },
+      {
+        "description": "Goblin Outpost"
+      }
+    ],
+    "characters": []
+  }
+]

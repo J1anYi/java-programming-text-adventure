@@ -1,0 +1,62 @@
+[
+  {
+    "description": "Elven Longbow, crafted from the wood of the Mallorn trees of Lothlorien, enchanted for accuracy",
+    "amount": 5,
+    "attackPower": 30
+  },
+  {
+    "description": "Dwarven Battle Axe, forged in the depths of the Lonely Mountain, unbreakable and sharp",
+    "amount": 3,
+    "attackPower": 40
+  },
+  {
+    "description": "Rohan's Rider Sword, a fine steel blade used by the horse-lords of Rohan",
+    "amount": 4,
+    "attackPower": 35
+  },
+  {
+    "description": "Gondorian Sword, a well-balanced sword from the forges of Minas Tirith",
+    "amount": 6,
+    "attackPower": 33
+  },
+  {
+    "description": "Wizard's Staff, imbued with ancient magic, once belonging to a powerful wizard",
+    "amount": 2,
+    "attackPower": 25
+  },
+  {
+    "description": "Orcish Scimitar, a crude yet effective weapon used by the orcs of Mordor",
+    "amount": 7,
+    "attackPower": 20
+  },
+  {
+    "description": "Hobbit's Sling, a simple but accurate ranged weapon favored by the Hobbits",
+    "amount": 8,
+    "attackPower": 15
+  },
+  {
+    "description": "Elven Dagger, a sharp and lightweight blade, easily concealed",
+    "amount": 5,
+    "attackPower": 18
+  },
+  {
+    "description": "Uruk-Hai Sword, a large and brutal weapon wielded by Saruman's elite Uruk-Hai",
+    "amount": 4,
+    "attackPower": 37
+  },
+  {
+    "description": "Ent's Branch, a mighty weapon used by the Ents, capable of crushing stone",
+    "amount": 2,
+    "attackPower": 45
+  },
+  {
+    "description": "Balrog's Whip, a fiery weapon wielded by the Balrog of Moria, fearsome and destructive",
+    "amount": 1,
+    "attackPower": 50
+  },
+  {
+    "description": "Nazgul's Sword, a dark blade carried by the Ringwraiths, instilling terror in its foes",
+    "amount": 3,
+    "attackPower": 42
+  }
+]
