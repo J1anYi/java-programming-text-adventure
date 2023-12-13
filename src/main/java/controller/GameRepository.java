@@ -14,13 +14,16 @@ import model.goods.Goods;
 import model.goods.Weapon;
 
 public class GameRepository {
+
+    // Singleton pattern
+    private static GameRepository instance = null;
     private List<Magic> magics;
     private List<Goods> goods;
     private List<Armor> armors;
     private List<Weapon> weapons;
     private List<Monster> monsters;
 
-    public GameRepository() {
+    private GameRepository() {
         // Initialize lists
         magics = new ArrayList<>();
     }
@@ -190,5 +193,12 @@ public class GameRepository {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static GameRepository getInstance() {
+        if (instance == null) {
+            instance = new GameRepository();
+        }
+        return instance;
     }
 }
