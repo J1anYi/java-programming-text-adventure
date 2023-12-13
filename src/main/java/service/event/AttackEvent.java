@@ -17,6 +17,12 @@ public class AttackEvent extends Event{
 
     private Character attacker;
     private Character attackee;
+
+    public AttackEvent(Character attacker, Character attackee) {
+        this.attacker = attacker;
+        this.attackee = attackee;
+    }
+
     @Override
     public void trigger() {
         System.out.println("----------Attack event executed----------");
