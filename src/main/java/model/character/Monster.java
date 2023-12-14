@@ -6,7 +6,7 @@ import model.goods.Weapon;
 
 import java.util.List;
 
-public class Monster extends Character{
+public class Monster extends Character implements Cloneable{
 
     private int gold;
     private int exp;
@@ -42,6 +42,11 @@ public class Monster extends Character{
 
     public void setDropItems(List<Goods> dropItems) {
         this.dropItems = dropItems;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     @Override

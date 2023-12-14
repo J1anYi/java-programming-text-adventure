@@ -76,7 +76,7 @@ public class Protagonist extends Character{
 
     @Override
     public String toString() {
-        return "Protagonist{" +
+        return super.toString() + "Protagonist{" +
                 "mana=" + mana +
                 ", money=" + money +
                 ", skills=" + skills +

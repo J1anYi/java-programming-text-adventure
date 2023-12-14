@@ -3,6 +3,7 @@ package service.event;
 import controller.Game;
 import model.Magic;
 import model.character.Character;
+import model.character.Monster;
 import model.character.Protagonist;
 import model.goods.Goods;
 
@@ -50,6 +51,10 @@ public class AttackEvent extends Event{
         }while (exit == 0 || attacker.getHealth() <= 0 || attackee.getHealth() <= 0);
         
         System.out.println("----------Attack finished----------");
+        if (attacker.getHealth() <= 0) {
+            System.out.println(attacker.getDescription() + " is dead, game over");
+            Game.getInstance().exit();
+        }
     }
 
     private int attackerAction() {
@@ -98,6 +103,15 @@ public class AttackEvent extends Event{
                 System.out.println("Invalid choice");
                 break;
         }
+
+        if (this.attackee.getHealth() <= 0) {
+            System.out.println(this.attackee.getDescription() + " is dead");
+            getDropItemsFromAttackee();
+            return -1;
+        }else if (this.attacker.getHealth() <= 0) {
+            System.out.println(this.attacker.getDescription() + " is dead");
+            return -1;
+        }
         
         return 0;
     }
@@ -106,13 +120,14 @@ public class AttackEvent extends Event{
         System.out.println("----------Attack----------");
         // check if the attacker has enough attack power
         if (attacker.getWeapon().getAttackPower() < attackee.getArmor().getDefensePower()) {
-            System.out.println("Not enough attack power, cause no damage");
+            System.out.println(attacker.getDescription() + " Not enough attack power, cause no damage");
             return;
         }
 
         // attack
-        attackee.setHealth(attackee.getHealth() - (attacker.getWeapon().getAttackPower() - attackee.getArmor().getDefensePower()));
-        System.out.println("Attack success, " + attackee.getDescription() + " health: " + attackee.getHealth());
+        int damage = attacker.getWeapon().getAttackPower() - attackee.getArmor().getDefensePower();
+        attackee.setHealth(attackee.getHealth() - damage);
+        System.out.println(attacker.getDescription() + "Attack success cause " + damage + " damage, " + attackee.getDescription() + " health: " + attackee.getHealth());
         System.out.println("----------Attack finished----------");
     }
     
@@ -143,6 +158,39 @@ public class AttackEvent extends Event{
         Event magicEvent = new MagicEvent(protagonist, this.attackee, magic);
         magicEvent.trigger();
     }
-    
+
+    private void getDropItemsFromAttackee() {
+        System.out.println("----------Get drop items----------");
+        // attacker must be protagonist in this version
+        // check if the attacker is protagonist
+        Protagonist protagonist = null;
+        if (this.attacker instanceof Protagonist) {
+            protagonist = (Protagonist) attacker;
+        }else {
+            System.out.println("attacker is not protagonist");
+            return;
+        }
+
+        // attackee must be monster in this version
+        // check if the attackee is monster
+        if (!(this.attackee instanceof Monster)) {
+            System.out.println("attackee is not monster");
+            return;
+        }
+        Monster monster = (Monster) this.attackee;
+
+        // get drop items
+        for (Goods goods : monster.getDropItems()) {
+            protagonist.getPossessions().add(goods);
+            System.out.println("Get " + goods.getDescription() + " from " + monster.getDescription());
+        }
+
+        // remove the monster from the scene
+        monster.getDropItems().clear();
+        Game.getInstance().getCurrentScene().getCharacters().remove(monster);
+        monster = null;
+
+        System.out.println("----------Get drop items finished----------");
+    }
     
 }

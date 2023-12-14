@@ -1,57 +1,57 @@
 [
   {
-    "description": "Elven Chainmail, light and durable, woven from mithril and enchanted for protection",
+    "description": "Elven Chainmail",
     "amount": 5,
     "defensePower": 30
   },
   {
-    "description": "Dwarven Plate Armor, heavy and resilient, forged from the finest steel of the Lonely Mountain",
+    "description": "Dwarven Plate Armor",
     "amount": 3,
     "defensePower": 40
   },
   {
-    "description": "Rohan's Rider Armor, sturdy leather reinforced with steel, suitable for swift horseback combat",
+    "description": "Rohan's Rider Armor",
+    "amount": 4,
+    "defensePower": 25
+  },
+  {
+    "description": "Gondorian Knight Armor",
+    "amount": 6,
+    "defensePower": 28
+  },
+  {
+    "description": "Wizard's Robes",
+    "amount": 2,
+    "defensePower": 20
+  },
+  {
+    "description": "Orcish Leather Armor",
+    "amount": 7,
+    "defensePower": 15
+  },
+  {
+    "description": "Hobbit's Cloak",
+    "amount": 8,
+    "defensePower": 10
+  },
+  {
+    "description": "Uruk-Hai Breastplate",
     "amount": 4,
     "defensePower": 35
   },
   {
-    "description": "Gondorian Knight Armor, a full set of steel armor, symbolizing the strength of Minas Tirith",
-    "amount": 6,
-    "defensePower": 33
-  },
-  {
-    "description": "Wizard's Robes, imbued with protective spells and made of a seemingly simple, yet resistant fabric",
+    "description": "Ent Bark Armor",
     "amount": 2,
-    "defensePower": 25
+    "defensePower": 42
   },
   {
-    "description": "Orcish Leather Armor, rugged and rough, providing basic protection",
-    "amount": 7,
-    "defensePower": 20
-  },
-  {
-    "description": "Hobbit's Cloak, a simple cloak offering camouflage and basic defense",
-    "amount": 8,
-    "defensePower": 15
-  },
-  {
-    "description": "Uruk-Hai Breastplate, a formidable armor piece worn by Saruman's elite warriors",
-    "amount": 4,
-    "defensePower": 37
-  },
-  {
-    "description": "Ent Bark Armor, natural armor as strong as the oldest trees, worn by the Ents",
-    "amount": 2,
+    "description": "Balrog Hide",
+    "amount": 1,
     "defensePower": 45
   },
   {
-    "description": "Balrog Hide, a rare and extremely tough armor, rumored to be made from the hide of a Balrog",
-    "amount": 1,
-    "defensePower": 50
-  },
-  {
-    "description": "Nazgul Cloak, a dark, ethereal armor that instills fear in the hearts of enemies",
+    "description": "Nazgul Cloak",
     "amount": 3,
-    "defensePower": 42
+    "defensePower": 38
   }
 ]

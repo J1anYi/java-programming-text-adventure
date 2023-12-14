@@ -1,0 +1,59 @@
+[
+  {
+    "health": 80,
+    "weapon": {
+      "description": "Refined Longbow",
+      "amount": 1,
+      "attackPower": 30
+    },
+    "armor": {
+      "description": "Light Elven Chainmail",
+      "amount": 1,
+      "defensePower": 15
+    },
+    "description": "Elven Archer, known for their excellent archery skills and stealth abilities.",
+    "mana": 40,
+    "money": 50,
+    "skills": [],
+    "possessions": [],
+    "experienceValue": 30
+  },
+  {
+    "health": 120,
+    "weapon": {
+      "description": "Heavy Battle Axe",
+      "amount": 1,
+      "attackPower": 25
+    },
+    "armor": {
+      "description": "Heavy Full Body Armor",
+      "amount": 1,
+      "defensePower": 20
+    },
+    "description": "Dwarf Warrior, famous for their incredible strength and indestructible armor.",
+    "mana": 10,
+    "money": 50,
+    "skills": [],
+    "possessions": [],
+    "experienceValue": 50
+  },
+  {
+    "health": 70,
+    "weapon": {
+      "description": "Wizard's Staff",
+      "amount": 1,
+      "attackPower": 20
+    },
+    "armor": {
+      "description": "Protective Robes",
+      "amount": 1,
+      "defensePower": 15
+    },
+    "description": "Human Mage, master of various magical arts, capable of casting powerful spells.",
+    "mana": 100,
+    "money": 70,
+    "skills": [],
+    "possessions": [],
+    "experienceValue": 60
+  }
+]

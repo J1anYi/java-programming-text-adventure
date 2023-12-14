@@ -16,7 +16,8 @@ public class TownScene extends Scene{
 
     @Override
     public Scene act() {
-        return null;
+        Scene nextScene = super.act();
+        return nextScene;
     }
 
     public void actTask(int choice) {

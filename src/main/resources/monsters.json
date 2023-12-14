@@ -2,10 +2,10 @@
   {
     "health": 79,
     "weapon": {
-      "description": "Rohan's Rider Sword"
+      "description": "Uruk-Hai Sword"
     },
     "armor": {
-      "description": "Nazgul Cloak"
+      "description": "Orcish Leather Armor"
     },
     "description": "Uruk Soldier",
     "gold": 40,
@@ -158,10 +158,10 @@
   {
     "health": 52,
     "weapon": {
-      "description": "Ent's Branch"
+      "description": "Rohan's Rider Sword"
     },
     "armor": {
-      "description": "Hobbit's Cloak"
+      "description": "Gondorian Knight Armor"
     },
     "description": "Easterling Infantry",
     "gold": 17,
@@ -210,10 +210,10 @@
   {
     "health": 83,
     "weapon": {
-      "description": "Ent's Branch"
+      "description": "Orcish Scimitar"
     },
     "armor": {
-      "description": "Balrog Hide"
+      "description": "Rohan's Rider Armor"
     },
     "description": "Haradrim Raider",
     "gold": 14,
@@ -236,10 +236,10 @@
   {
     "health": 61,
     "weapon": {
-      "description": "Wizard's Staff"
+      "description": "Hobbit's Sling"
     },
     "armor": {
-      "description": "Uruk-Hai Breastplate"
+      "description": "Hobbit's Cloak"
     },
     "description": "Goblin Scout",
     "gold": 41,
@@ -291,7 +291,7 @@
       "description": "Uruk-Hai Sword"
     },
     "armor": {
-      "description": "Ent Bark Armor"
+      "description": "Uruk-Hai Breastplate"
     },
     "description": "Uruk-Hai Elite",
     "gold": 53,
@@ -309,12 +309,12 @@
     ]
   },
   {
-    "health": 155,
+    "health": 255,
     "weapon": {
-      "description": "Uruk-Hai Sword"
+      "description": "Nazgul's Sword"
     },
     "armor": {
-      "description": "Ent Bark Armor"
+      "description": "Nazgul Cloak"
     },
     "description": "Angmar Warlord",
     "gold": 82,
@@ -340,7 +340,7 @@
       "description": "Wizard's Staff"
     },
     "armor": {
-      "description": "Nazgul Cloak"
+      "description": "Wizard's Robes"
     },
     "description": "Mordor Sorcerer",
     "gold": 99,
@@ -415,10 +415,10 @@
   {
     "health": 339,
     "weapon": {
-      "description": "Elven Longbow"
+      "description": "Nazgul's Sword"
     },
     "armor": {
-      "description": "Balrog Hide"
+      "description": "Nazgul Cloak"
     },
     "description": "Witch-King of Angmar",
     "gold": 132,

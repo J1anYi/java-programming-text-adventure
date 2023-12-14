@@ -17,14 +17,11 @@ public class Game {
 
     private Game() {
         gameRepository = GameRepository.getInstance();
-
         start();
     }
 
     public void start() {
         System.out.println("----------------Game started----------------");
-        this.currentScene = new Scene();
-        this.currentProtagonist = new Protagonist();
         load();
     }
 
@@ -35,14 +32,25 @@ public class Game {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        // set current scene and protagonist
+        for (Scene scene : GameRepository.getInstance().getTownScenes()) {
+            if (scene.getDescription().equals("Newbie Village")) {
+                this.currentScene = scene;
+                break;
+            }
+        }
+        this.currentProtagonist = chooseProtagonist();
     }
 
     public void run() {
         System.out.println("----------------Game running----------------");
         while (true) {
             System.out.println("---------------------------------------------------");
+            System.out.println("Current scene: " + currentScene.getDescription());
+            System.out.println("Current protagonist: " + currentProtagonist.getDescription());
             System.out.println("Please write your next action: ");
-            System.out.println("1. Go to the next scene");
+            System.out.println("1. Walk around in the current scene");
             System.out.println("2. View Protagonist Panel");
             System.out.println("3. Exit the game");
 
@@ -58,6 +66,7 @@ public class Game {
                 case 2:
                     System.out.println("Protagonist Panel");
                     System.out.println(currentProtagonist);
+
                     break;
                 case 3:
                     exit();
@@ -66,10 +75,7 @@ public class Game {
                     System.out.println("Invalid action");
                     break;
             }
-
         }
-
-
     }
 
     public void exit() {
@@ -99,5 +105,18 @@ public class Game {
         }
 
         return instance;
+    }
+
+
+    private Protagonist chooseProtagonist() {
+        System.out.println("---------------------------------------------------");
+        System.out.println("Please choose your protagonist: ");
+        // list all protagonist
+        for (int i = 0; i < GameRepository.getInstance().getProtagonists().size(); i++) {
+            System.out.println(i + ". " + GameRepository.getInstance().getProtagonists().get(i));
+        }
+        int choice = scanner.nextInt();
+
+        return GameRepository.getInstance().getProtagonists().get(choice);
     }
 }

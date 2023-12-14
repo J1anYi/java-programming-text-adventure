@@ -9,11 +9,13 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.character.Monster;
+import model.character.Protagonist;
 import model.goods.Armor;
 import model.goods.Goods;
 import model.goods.Weapon;
 import service.scene.Scene;
 import service.scene.TownScene;
+import model.character.Character;
 
 public class GameRepository {
 
@@ -26,6 +28,7 @@ public class GameRepository {
     private List<Monster> monsters;
     private List<Scene> scenes;
     private List<TownScene> townScenes;
+    private List<Protagonist> protagonists;
 
     private GameRepository() {
         // Initialize lists
@@ -68,9 +71,15 @@ public class GameRepository {
 
         // connect scenes after loading
         connectScenes();
+        // load characters for scenes
+        loadCharactersForScenes();
         // display scenes will cause stack overflow
 //        displayScenes();
 //        displayTownScenes();
+
+        loadProtagonists("protagonists.json");
+        System.out.println("Protagonists loaded!");
+        displayProtagonists();
 
         System.out.println("All resources loaded!");
     }
@@ -232,6 +241,39 @@ public class GameRepository {
         }
     }
 
+    private void loadCharactersForScenes() {
+        // load characters for scenes
+        for (Scene scene : scenes) {
+            List<Character> characters = new ArrayList<>();
+            for (Character character : scene.getCharacters()) {
+                for (Monster monster : monsters) {
+                    if (monster.getDescription().contains(character.getDescription())) {
+                        // deep copy monster to character
+                        try {
+                            Monster monsterCopy = (Monster) monster.clone();
+                            characters.add(monsterCopy);
+                        } catch (CloneNotSupportedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+
+                // maybe later i will add NPC to the scene TODO
+            }
+            scene.setCharacters(characters);
+        }
+
+        // load characters for town scenes TODO
+    }
+
+    private void loadProtagonists(String jsonFilePath) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        protagonists = objectMapper.readValue(file, new TypeReference<List<Protagonist>>() {});
+    }
+
     public void displayMagics() {
         System.out.println("Magics:");
         for (Magic magic : magics) {
@@ -281,6 +323,37 @@ public class GameRepository {
         }
     }
 
+    public void displayProtagonists() {
+        System.out.println("Protagonists:");
+        for (Protagonist protagonist : protagonists) {
+            System.out.println(protagonist);
+        }
+    }
+
+    public List<Goods> getGoods() {
+        return goods;
+    }
+
+    public List<Armor> getArmors() {
+        return armors;
+    }
+
+    public List<Weapon> getWeapons() {
+        return weapons;
+    }
+
+    public List<Monster> getMonsters() {
+        return monsters;
+    }
+
+    public List<Scene> getScenes() {
+        return scenes;
+    }
+
+    public List<TownScene> getTownScenes() {
+        return townScenes;
+    }
+
     public static void main(String[] args) {
         GameRepository gameRepository = new GameRepository();
         try {
@@ -288,6 +361,10 @@ public class GameRepository {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Protagonist> getProtagonists() {
+        return protagonists;
     }
 
     public static GameRepository getInstance() {
