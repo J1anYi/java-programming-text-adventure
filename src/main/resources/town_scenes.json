@@ -10,7 +10,18 @@
       }
     ],
     "characters": [],
-    "taskboard": [],
+    "taskboard": [
+      {
+        "description": "Find the lost Sword of the King in the depths of Dark Lord's castle, then you will win the game..",
+        "need": {
+          "description": "Sword of the King"
+        },
+        "reward": {
+          "description": "Ring of Power"
+        }
+      }
+    ]
+  ,
     "marketplace": []
   },
   {
@@ -41,7 +52,26 @@
       }
     ],
     "characters": [],
-    "taskboard": [],
+    "taskboard": [
+      {
+        "description": "I need a Scroll of Ancient Lore to defeat the Dark Lord, and give you good weapon",
+        "need": {
+          "description": "Scroll of Ancient Lore"
+        },
+        "reward": {
+          "description": "Nazgul's Sword"
+        }
+      },
+        {
+            "description": "I need a Scroll of Ancient Lore to defeat the Dark Lord, and give you good armor",
+            "need": {
+            "description": "Scroll of Ancient Lore"
+            },
+            "reward": {
+            "description": "Balrog Hide"
+            }
+        }
+    ],
     "marketplace": []
   }
 ]

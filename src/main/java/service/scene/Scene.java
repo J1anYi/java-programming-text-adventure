@@ -17,9 +17,26 @@ public class Scene {
     }
 
     public Scene act() {
+        listChoice();
+        Scene nextScene = choice();
+        return nextScene;
+    }
+
+    // list next scenes
+    private void listNextScenes() {
+        System.out.println("Please choice the scene number you want to go: ");
+        for (int i = 0; i < nextScenes.size(); i++) {
+            System.out.println(i + ". " + nextScenes.get(i).getDescription());
+        }
+    }
+
+    protected void listChoice() {
         System.out.println("Please choice the event number you want to do: ");
         System.out.println("1. Go to the next scene");
         System.out.println("2. attack monster");
+    }
+
+    protected Scene choice() {
         int choice = Game.scanner.nextInt();
         switch (choice) {
             case 1:
@@ -35,15 +52,7 @@ public class Scene {
         return null;
     }
 
-    // list next scenes
-    private void listNextScenes() {
-        System.out.println("Please choice the scene number you want to go: ");
-        for (int i = 0; i < nextScenes.size(); i++) {
-            System.out.println(i + ". " + nextScenes.get(i).getDescription());
-        }
-    }
-
-    private Scene choiceScene() {
+    protected Scene choiceScene() {
         listNextScenes();
         int choice = Game.scanner.nextInt();
 

@@ -31,7 +31,7 @@
       "description": "Hobbit's Sling"
     },
     "armor": {
-      "description": "Nazgul Cloak"
+      "description": "Orcish Leather Armor"
     },
     "description": "Haradrim Raider",
     "gold": 30,
@@ -80,7 +80,7 @@
   {
     "health": 62,
     "weapon": {
-      "description": "Nazgul's Sword"
+      "description": "Orcish Scimitar"
     },
     "armor": {
       "description": "Orcish Leather Armor"
@@ -246,9 +246,6 @@
     "exp": 43,
     "dropItems": [
       {
-        "description": "Sword of the King"
-      },
-      {
         "description": "Wizard's Staff"
       },
       {
@@ -328,9 +325,6 @@
       },
       {
         "description": "Wizard's Robes"
-      },
-      {
-        "description": "Sword of the King"
       }
     ]
   },
@@ -354,9 +348,6 @@
       },
       {
         "description": "Rohan's Rider Armor"
-      },
-      {
-        "description": "Sword of the King"
       }
     ]
   },
@@ -387,32 +378,6 @@
     ]
   },
   {
-    "health": 479,
-    "weapon": {
-      "description": "Wizard's Staff"
-    },
-    "armor": {
-      "description": "Dwarven Plate Armor"
-    },
-    "description": "Witch-King of Angmar",
-    "gold": 125,
-    "exp": 310,
-    "dropItems": [
-      {
-        "description": "Hobbit's Pipe"
-      },
-      {
-        "description": "Balrog's Whip"
-      },
-      {
-        "description": "Gondorian Knight Armor"
-      },
-      {
-        "description": "Scroll of Ancient Lore"
-      }
-    ]
-  },
-  {
     "health": 339,
     "weapon": {
       "description": "Nazgul's Sword"
@@ -435,6 +400,9 @@
       },
       {
         "description": "Gondorian Horn"
+      },
+      {
+        "description": "Sword of the King"
       }
     ]
   }

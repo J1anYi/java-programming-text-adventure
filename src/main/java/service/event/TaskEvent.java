@@ -31,21 +31,33 @@ public class TaskEvent extends Event{
         }
 
         // check if the character has the goods to finish the task
-        if (protagonist.getPossessions().contains(task.getNeed())) {
-            Goods currentGoods = protagonist.getPossessions().get(protagonist.getPossessions().indexOf(task.getNeed()));
-            if (currentGoods.getAmount() >= task.getNeed().getAmount()) {
-                currentGoods.setAmount(currentGoods.getAmount() - task.getNeed().getAmount());
-            }else {
-                System.out.println("Not enough goods.The task needs " + task.getNeed().getAmount() +
-                        "  " + task.getNeed().getDescription() +
-                        " but you only have " + currentGoods.getAmount());
-                return;
+        if (checkHavingGoods(task.getNeed(), protagonist)) {
+            Goods currentGoods = null;
+            for (int i = 0; i < protagonist.getPossessions().size(); i++) {
+                if (protagonist.getPossessions().get(i).getDescription().contains(task.getNeed().getDescription())) {
+                    currentGoods = protagonist.getPossessions().get(i);
+                    break;
+                }
             }
+            protagonist.getPossessions().remove(currentGoods);
+
+            // finish the task
+            protagonist.getPossessions().add(task.getReward());
+            System.out.println("You finished the task and get " + task.getReward().getAmount() + " " + task.getReward().getDescription());
+            System.out.println("----------Task finished----------");
+        }else {
+            System.out.println("Not enough goods.The task needs " + task.getNeed().getDescription() +
+                    " but you don't have it");
         }
 
-        // finish the task
-        protagonist.getPossessions().add(task.getReward());
-        System.out.println("You finished the task and get " + task.getReward().getAmount() + " " + task.getReward().getDescription());
-        System.out.println("----------Task finished----------");
+    }
+
+    private boolean checkHavingGoods(Goods goods, Protagonist protagonist) {
+        for (int i = 0; i < protagonist.getPossessions().size(); i++) {
+            if (protagonist.getPossessions().get(i).getDescription().contains(goods.getDescription())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

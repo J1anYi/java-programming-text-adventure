@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import model.Task;
 import model.character.Monster;
 import model.character.Protagonist;
 import model.goods.Armor;
@@ -67,6 +68,7 @@ public class GameRepository {
         System.out.println("Scenes loaded!");
 
         loadTownScenes("src/main/resources/town_scenes.json");
+        loadTaskGoodsForTownScenes();
         System.out.println("TownScenes loaded!");
 
         // connect scenes after loading
@@ -189,6 +191,96 @@ public class GameRepository {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource(jsonFilePath).getFile());
         townScenes = objectMapper.readValue(file, new TypeReference<List<TownScene>>() {});
+    }
+
+    private void loadTaskGoodsForTownScenes() {
+        for (TownScene townScene : townScenes) {
+            for (Task task : townScene.getTaskboard()) {
+                // deep copy goods to task
+                for (Goods good : goods) {
+                    if (good.getDescription().contains(task.getNeed().getDescription())) {
+                        // deep copy good to task
+                        try {
+                            Goods goodCopy = (Goods) good.clone();
+                            goodCopy.setAmount(1);
+                            task.setNeed(goodCopy);
+                        } catch (CloneNotSupportedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+                for (Goods good : goods) {
+                    if (good.getDescription().contains(task.getReward().getDescription())) {
+                        // deep copy good to task
+                        try {
+                            Goods goodCopy = (Goods) good.clone();
+                            goodCopy.setAmount(1);
+                            task.setReward(goodCopy);
+                        } catch (CloneNotSupportedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+
+                // copy weapon to task
+                for (Weapon weapon : weapons) {
+                    if (weapon.getDescription().contains(task.getNeed().getDescription())) {
+                        // deep copy weapon to task
+                        try {
+                            Weapon weaponCopy = (Weapon) weapon.clone();
+                            weaponCopy.setAmount(1);
+                            task.setNeed(weaponCopy);
+                        } catch (CloneNotSupportedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+                for (Weapon weapon : weapons) {
+                    if (weapon.getDescription().contains(task.getReward().getDescription())) {
+                        // deep copy weapon to task
+                        try {
+                            Weapon weaponCopy = (Weapon) weapon.clone();
+                            weaponCopy.setAmount(1);
+                            task.setReward(weaponCopy);
+                        } catch (CloneNotSupportedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+
+                // copy armor to task
+                for (Armor armor : armors) {
+                    if (armor.getDescription().contains(task.getNeed().getDescription())) {
+                        // deep copy armor to task
+                        try {
+                            Armor armorCopy = (Armor) armor.clone();
+                            armorCopy.setAmount(1);
+                            task.setNeed(armorCopy);
+                        } catch (CloneNotSupportedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+                for (Armor armor : armors) {
+                    if (armor.getDescription().contains(task.getReward().getDescription())) {
+                        // deep copy armor to task
+                        try {
+                            Armor armorCopy = (Armor) armor.clone();
+                            armorCopy.setAmount(1);
+                            task.setReward(armorCopy);
+                        } catch (CloneNotSupportedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     private void connectScenes() {

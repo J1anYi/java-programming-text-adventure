@@ -46,9 +46,6 @@
       },
       {
         "description": "Easterling Infantry"
-      },
-      {
-        "description": "Haradrim Raider"
       }
     ]
   },
@@ -65,18 +62,6 @@
     "characters": [
       {
         "description": "Uruk Soldier"
-      },
-      {
-        "description": "Uruk Soldier"
-      },
-      {
-        "description": "Orc Grunt"
-      },
-      {
-        "description": "Uruk Soldier"
-      },
-      {
-        "description": "Orc Grunt"
       },
       {
         "description": "Uruk Soldier"
@@ -106,18 +91,6 @@
       }
     ],
     "characters": [
-      {
-        "description": "Uruk Soldier"
-      },
-      {
-        "description": "Uruk Soldier"
-      },
-      {
-        "description": "Orc Grunt"
-      },
-      {
-        "description": "Uruk Soldier"
-      },
       {
         "description": "Orc Grunt"
       },
@@ -180,19 +153,10 @@
     ],
     "characters": [
       {
-        "description": "Angmar Warlord"
-      },
-      {
-        "description": "Angmar Warlord"
-      },
-      {
         "description": "Mordor Sorcerer"
       },
       {
         "description": "Angmar Warlord"
-      },
-      {
-        "description": "Witch-King of Angmar"
       },
       {
         "description": "Witch-King of Angmar"

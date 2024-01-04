@@ -65,7 +65,7 @@ public class Game {
                     break;
                 case 2:
                     System.out.println("Protagonist Panel");
-                    System.out.println(currentProtagonist);
+                    currentProtagonist.display();
 
                     break;
                 case 3:
@@ -74,6 +74,20 @@ public class Game {
                 default:
                     System.out.println("Invalid action");
                     break;
+            }
+
+            judgeWin();
+        }
+    }
+
+    private void judgeWin() {
+        // if the protagonist has king's ring, he wins
+        for (int i = 0; i < currentProtagonist.getPossessions().size(); i++) {
+            if (currentProtagonist.getPossessions().get(i).getDescription().contains("Ring of Power")) {
+                System.out.println("---------------------------------------------------");
+                System.out.println("You have the king's ring");
+                System.out.println("You win the game");
+                exit();
             }
         }
     }
