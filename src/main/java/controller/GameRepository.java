@@ -42,31 +42,31 @@ public class GameRepository {
 
     public void loadAllResource() throws IOException {
         System.out.println("Loading all resources...");
-        loadMagics("magics.json");
+        loadMagics("src/main/resources/magics.json");
         System.out.println("Magics loaded!");
         displayMagics();
 
-        loadGoods("goods.json");
+        loadGoods("src/main/resources/goods.json");
         System.out.println("Goods loaded!");
         displayGoods();
 
-        loadArmors("armors.json");
+        loadArmors("src/main/resources/armors.json");
         System.out.println("Armors loaded!");
         displayArmors();
 
-        loadWeapons("weapons.json");
+        loadWeapons("src/main/resources/weapons.json");
         System.out.println("Weapons loaded!");
         displayWeapons();
 
-        loadMonsters("monsters.json");
+        loadMonsters("src/main/resources/monsters.json");
         System.out.println("Monsters loaded!");
         displayMonsters();
 
         // load scenes
-        loadScenes("scenes.json");
+        loadScenes("src/main/resources/scenes.json");
         System.out.println("Scenes loaded!");
 
-        loadTownScenes("town_scenes.json");
+        loadTownScenes("src/main/resources/town_scenes.json");
         System.out.println("TownScenes loaded!");
 
         // connect scenes after loading
@@ -77,7 +77,7 @@ public class GameRepository {
 //        displayScenes();
 //        displayTownScenes();
 
-        loadProtagonists("protagonists.json");
+        loadProtagonists("src/main/resources/protagonists.json");
         System.out.println("Protagonists loaded!");
         displayProtagonists();
 
@@ -352,15 +352,6 @@ public class GameRepository {
 
     public List<TownScene> getTownScenes() {
         return townScenes;
-    }
-
-    public static void main(String[] args) {
-        GameRepository gameRepository = new GameRepository();
-        try {
-            gameRepository.loadAllResource();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public List<Protagonist> getProtagonists() {
