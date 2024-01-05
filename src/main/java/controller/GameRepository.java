@@ -4,6 +4,7 @@ import model.Magic;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -43,31 +44,31 @@ public class GameRepository {
 
     public void loadAllResource() throws IOException {
         System.out.println("Loading all resources...");
-        loadMagics("src/main/resources/magics.json");
+        loadMagics("magics.json");
         System.out.println("Magics loaded!");
         displayMagics();
 
-        loadGoods("src/main/resources/goods.json");
+        loadGoods("goods.json");
         System.out.println("Goods loaded!");
         displayGoods();
 
-        loadArmors("src/main/resources/armors.json");
+        loadArmors("armors.json");
         System.out.println("Armors loaded!");
         displayArmors();
 
-        loadWeapons("src/main/resources/weapons.json");
+        loadWeapons("weapons.json");
         System.out.println("Weapons loaded!");
         displayWeapons();
 
-        loadMonsters("src/main/resources/monsters.json");
+        loadMonsters("monsters.json");
         System.out.println("Monsters loaded!");
         displayMonsters();
 
         // load scenes
-        loadScenes("src/main/resources/scenes.json");
+        loadScenes("scenes.json");
         System.out.println("Scenes loaded!");
 
-        loadTownScenes("src/main/resources/town_scenes.json");
+        loadTownScenes("town_scenes.json");
         loadTaskGoodsForTownScenes();
         System.out.println("TownScenes loaded!");
 
@@ -79,7 +80,7 @@ public class GameRepository {
 //        displayScenes();
 //        displayTownScenes();
 
-        loadProtagonists("src/main/resources/protagonists.json");
+        loadProtagonists("protagonists.json");
         System.out.println("Protagonists loaded!");
         displayProtagonists();
 
@@ -90,38 +91,72 @@ public class GameRepository {
     // Methods to load magical items from JSON, copy chatGPT
     public void loadMagics(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        magics = objectMapper.readValue(file, new TypeReference<List<Magic>>() {});
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // magics = objectMapper.readValue(file, new TypeReference<List<Magic>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                magics = objectMapper.readValue(inputStream, new TypeReference<List<Magic>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
     }
 
     public void loadGoods(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        goods = objectMapper.readValue(file, new TypeReference<List<Goods>>() {});
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // goods = objectMapper.readValue(file, new TypeReference<List<Goods>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                goods = objectMapper.readValue(inputStream, new TypeReference<List<Goods>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
     }
 
     public void loadArmors(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        armors = objectMapper.readValue(file, new TypeReference<List<Armor>>() {});
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // armors = objectMapper.readValue(file, new TypeReference<List<Armor>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                armors = objectMapper.readValue(inputStream, new TypeReference<List<Armor>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
     }
 
     public void loadWeapons(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        weapons = objectMapper.readValue(file, new TypeReference<List<Weapon>>() {});
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // weapons = objectMapper.readValue(file, new TypeReference<List<Weapon>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                weapons = objectMapper.readValue(inputStream, new TypeReference<List<Weapon>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
     }
 
     public void loadMonsters(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        monsters = objectMapper.readValue(file, new TypeReference<List<Monster>>() {});
-
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // monsters = objectMapper.readValue(file, new TypeReference<List<Monster>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                monsters = objectMapper.readValue(inputStream, new TypeReference<List<Monster>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
         // set weapon and armor for each monster
         for (Monster monster : monsters) {
             loadArmorsAndWeaponsForMonsters(monster);
@@ -181,16 +216,30 @@ public class GameRepository {
 
     private void loadScenes(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        scenes = objectMapper.readValue(file, new TypeReference<List<Scene>>() {});
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // scenes = objectMapper.readValue(file, new TypeReference<List<Scene>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                scenes = objectMapper.readValue(inputStream, new TypeReference<List<Scene>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
     }
 
     private void loadTownScenes(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        townScenes = objectMapper.readValue(file, new TypeReference<List<TownScene>>() {});
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // townScenes = objectMapper.readValue(file, new TypeReference<List<TownScene>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                townScenes = objectMapper.readValue(inputStream, new TypeReference<List<TownScene>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
     }
 
     private void loadTaskGoodsForTownScenes() {
@@ -361,9 +410,16 @@ public class GameRepository {
 
     private void loadProtagonists(String jsonFilePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(jsonFilePath).getFile());
-        protagonists = objectMapper.readValue(file, new TypeReference<List<Protagonist>>() {});
+        // ClassLoader classLoader = getClass().getClassLoader();
+        // File file = new File(classLoader.getResource(jsonFilePath).getFile());
+        // protagonists = objectMapper.readValue(file, new TypeReference<List<Protagonist>>() {});
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(jsonFilePath)) {
+            if (inputStream != null) {
+                protagonists = objectMapper.readValue(inputStream, new TypeReference<List<Protagonist>>() {});
+            } else {
+                throw new IOException("File not found: " + jsonFilePath);
+            }
+        }
     }
 
     public void displayMagics() {
